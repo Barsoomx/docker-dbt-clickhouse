@@ -6,7 +6,6 @@ updates:
     schedule:
       interval: "daily"
       time: "07:00"
-    open-pull-requests-limit: 0
     assignees:
       - "barsoomx"
     open-pull-requests-limit: 20
@@ -15,7 +14,8 @@ updates:
   # docker dependencies
   - package-ecosystem: "docker"
     directory: "/"
-    open-pull-requests-limit: 0
+    schedule:
+      interval: "weekly"
     assignees:
       - "barsoomx"
     open-pull-requests-limit: 20
