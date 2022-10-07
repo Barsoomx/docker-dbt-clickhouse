@@ -1,11 +1,20 @@
 version: 2
 updates:
-  # Configuration for Dockerfile
+  # pip requirements.txt
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "daily"
       time: "07:00"
+    open-pull-requests-limit: 0
+    assignees:
+      - "barsoomx"
+    open-pull-requests-limit: 20
+    rebase-strategy: auto
+
+  # docker dependencies
+  - package-ecosystem: "docker"
+    directory: "/"
     open-pull-requests-limit: 0
     assignees:
       - "barsoomx"

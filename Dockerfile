@@ -22,11 +22,11 @@ WORKDIR /usr/app/
 ENV DBT_HOME=/usr/app \
     PYTHONIOENCODING=utf-8
 
-ARG DBT_CH_VERSION='1.2.1'
+COPY requirements.txt .docker/requirements.txt
 
 RUN apt-get -qq update && \
     apt-get -qqy --no-install-recommends install $BUILD_DEPS $RUNTIME_DEPS &&  \
-    pip --no-cache-dir install dbt-clickhouse==$DBT_CH_VERSION && \
+    pip --no-cache-dir install -r .docker/requirements.txt && \
     apt-get -y purge $BUILD_DEPS &&  \
     apt-get -y autoremove &&  \
     rm -rf /var/lib/apt/lists/* &&  \
