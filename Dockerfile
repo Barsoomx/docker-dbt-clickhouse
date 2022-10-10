@@ -33,4 +33,3 @@ RUN apt-get -qq update && \
     rm -rf /var/cache/apt
 
 LABEL maintainer="Filipp Balakin <filipp@balakin.ru>"
-ENTRYPOINT [ "/bin/bash" ]
