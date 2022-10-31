@@ -1,1 +1,1 @@
-dbt-clickhouse==1.2.2
+dbt-clickhouse==1.3.0
